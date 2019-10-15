@@ -53,6 +53,32 @@ h5 {
 h6 {
 	font-size: 10px;
 }
+nav {
+	display: block;
+	font-family: "headlinenewsregular";
+	font-size: 12px;
+	text-transform: uppercase;
+}
+nav a {
+	display: flex;
+	color: #696969;
+	align-items: center;
+	text-decoration: none;
+}
+nav img {
+	border-radius: 30px;
+	vertical-align: middle;
+	margin: 0 5px;
+}
+nav span {
+	flex: 1;
+}
+nav a > span:first-child {
+	text-align: right;
+}
+nav a > span:last-child {
+	text-align: left;
+}
 .sticky {
 	background: #000;
 	border-bottom: 1px solid #333;
@@ -65,10 +91,6 @@ h6 {
 	left: 0;
 	right: 0;
 	z-index: 3;
-}
-.sticky img {
-	border-radius: 30px;
-	vertical-align: middle;
 }
 .story-link {
 	color: inherit;
