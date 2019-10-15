@@ -52,6 +52,7 @@ h6 {
 }
 nav {
 	animation: slide-in-from-top 250ms ease-in-out;
+	border-bottom: 1px solid #333;
 	display: block;
 	height: 100%;
 	font-family: "headlinenewsregular";
@@ -60,7 +61,6 @@ nav {
 }
 nav a {
 	color: #696969;
-	border-bottom: 1px solid #333;
 	display: flex;
 	height: 40px;
 	align-items: center;
@@ -98,6 +98,7 @@ nav a > span:last-child {
 }
 .story-header {
 	background: #111;
+	border-bottom: 1px solid  #2a2a29;
 	padding: 60px 20px;
 }
 .story-wrapper {
