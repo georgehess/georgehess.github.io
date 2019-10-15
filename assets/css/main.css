@@ -80,6 +80,7 @@ nav a > span:last-child {
 	text-align: left;
 }
 .sticky {
+	animation: slide-in-from-top 250ms ease-in-out;
 	background: #000;
 	border-bottom: 1px solid #333;
 	height: 40px;
@@ -185,6 +186,10 @@ nav a > span:last-child {
 	margin-bottom: 0;
 }
 /* THEMES */
+.seaside .sticky {
+	background-color: #007d55;
+	border-bottom-color: #39c89a;
+}
 .seaside .story-header {
 	background-color: #000b0e;
 }
@@ -192,8 +197,13 @@ nav a > span:last-child {
 .seaside .story-thumb img {
 	background-color: #39c89a;
 }
-.seaside .story-cite {
+.seaside .story-cite,
+.seaside nav a {
 	color: #a0c7bb;
+}
+.healer .sticky {
+	background-color: #501758;
+	border-bottom-color: #b439c8;
 }
 .healer .story-header {
 	background-color: #0d000e;
@@ -202,8 +212,13 @@ nav a > span:last-child {
 .healer .story-thumb img {
 	background-color: #b439c8;
 }
-.healer .story-cite {
+.healer .story-cite,
+.healer nav a {
 	color: #d3b4d8;
+}
+.rusty .sticky {
+	background-color: #a92500;
+	border-bottom-color: #e84619;
 }
 .rusty .story-header {
 	background-color: #150303;
@@ -212,8 +227,13 @@ nav a > span:last-child {
 .rusty .story-thumb img {
 	background-color: #e84619;
 }
-.rusty .story-cite {
+.rusty .story-cite,
+.rusty nav a {
 	color: #e6b5a8;
+}
+.honey .sticky {
+	background-color: #9e6b00;
+	border-bottom-color: #ffad00;
 }
 .honey .story-header {
 	background-color: #100c00;
@@ -222,8 +242,13 @@ nav a > span:last-child {
 .honey .story-thumb img {
 	background-color: #ffad00;
 }
-.honey .story-cite {
+.honey .story-cite,
+.honey nav a {
 	color: #e6dabb;
+}
+.marine .sticky {
+	background-color: #003c84;
+	border-bottom-color: #0060d2;
 }
 .marine .story-header {
 	background-color: #000710;
@@ -232,7 +257,8 @@ nav a > span:last-child {
 .marine .story-thumb img {
 	background-color: #0060d2;
 }
-.marine .story-cite {
+.marine .story-cite,
+.marine nav a {
 	color: #a0afc7;
 }
 /* RESPONSIVE */
@@ -246,5 +272,14 @@ nav a > span:last-child {
 @media screen and (min-width: 540px) {
 	.story-body {
 		padding: 60px 80px;
+	}
+}
+/* ANIMATIONS */
+@keyframes slide-in-from-top {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
 	}
 }
