@@ -1,0 +1,20 @@
+<header class="story-header">
+	<div class="story-wrapper">
+		<h1 class="story-title">{{ include.title }}</h1>
+		<div class="story-thumb">
+			<hr />
+			<img src="{{ include.thumb }}" width="60" height="60" />
+		</div>
+		<div class="story-cite">
+			<p>
+				Published
+				<time datetime="{{ include.date }}" title="{{ include.date | date: '%B %d, %Y' }}">
+					{{ include.date | date: '%B %d, %Y' }}
+				</time>
+				<br />
+				by {{ include.author }}
+			</p>
+		</div>
+		<div class="story-intro">{{include.excerpt}}</div>
+	</div>
+</header>

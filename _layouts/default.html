@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>{{ page.title }} by {{ page.author }}</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="{{ page.theme }}">
+
+	{{ content }}
+
+	<footer>
+		&copy; {{ 'now' | date: "%Y" }} <a href="/">George Hess</a>
+	</footer>
+
+	<script src="/assets/js/smoothscroll.min.js"></script>
+	<script>
+		if (!!location.hash && document.referrer.startsWith(location.protocol + "//" + location.host)) {
+			if (location.hash === "#read-more") {
+				document.querySelector(".story-cite").scrollIntoView({behavior: "smooth"});
+			} else if (location.hash.startsWith("#list-")) {
+				document.getElementById(location.hash.slice(6)).scrollIntoView({behavior: "smooth"});
+			}
+		}
+	</script>
+
+</body>
+</html>
