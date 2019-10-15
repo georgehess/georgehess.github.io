@@ -6,7 +6,7 @@ author: "George Hess"
 	<nav>
 		<a href="/#list-{{ page.slug }}">
 			<span>George</span>
-			<img src="/assets/img/menu.svg" width="25" height="25" />
+			<img src="/assets/img/menu.svg" width="25" height="25" title="All Stories" />
 			<span>Hess</span>
 		</a>
 	</nav>
