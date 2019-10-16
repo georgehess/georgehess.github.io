@@ -1,6 +1,6 @@
 @font-face {
-	font-family: "headlinenewsregular";
-	src: url("../fonts/headlinenews.woff2") format("woff2"), url("../fonts/headlinenews.woff") format("woff");
+	font-family: "headlinenews";
+	src: url("/assets/fonts/headlinenews.woff2") format("woff2"), url("/assets/fonts/headlinenews.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -27,7 +27,7 @@ footer a {
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #696969;
-	font-family: "headlinenewsregular";
+	font-family: "headlinenews";
 	font-weight: normal;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -55,7 +55,7 @@ nav {
 	border-bottom: 1px solid #333;
 	display: block;
 	height: 100%;
-	font-family: "headlinenewsregular";
+	font-family: "headlinenews";
 	font-size: 12px;
 	text-transform: uppercase;
 }
@@ -119,9 +119,9 @@ nav a > span:last-child {
 	background: #696969;
 	border: none;
 	height: 3px;
-	mask: url(../img/stripes.svg);
-	-moz-mask: url(../img/stripes.svg);
-	-webkit-mask: url(../img/stripes.svg);
+	mask: url("/assets/img/stripes.svg");
+	-moz-mask: url("/assets/img/stripes.svg");
+	-webkit-mask: url("/assets/img/stripes.svg");
 	position: absolute;
 	top: 50%;
 	left: 10%;
