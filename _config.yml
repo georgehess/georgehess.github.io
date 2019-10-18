@@ -1,0 +1,7 @@
+title: Stories by George Hess
+author: George Hess
+twitter: @georgehess
+description: The writings and ramblings of one Sir George Hess
+paginate: 5
+paginate_path: /pg:num/
+plugins: [jekyll-paginate]

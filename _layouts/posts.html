@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<header class="sticky">
+	<nav class="menu">
+		<a class="next post" title="Next Post" {% if page.next.url %}href="{{ site.url }}{{ page.next.url }}"{% else %}disabled{% endif %}>
+			<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+				<use href="#arrow" />
+			</svg>
+			<span class="name">George</span>
+		</a>
+
+		{% assign paginatePage = page.index | divided_by: site.paginate | plus: 1 %}
+		{% if paginatePage > 1 %}
+			{% assign menuUrl = "/pg" | append: paginatePage | append: "/#list-" | append: page.slug %}
+		{% else %}
+			{% assign menuUrl = "/#list-" | append: page.slug %}
+		{% endif %}
+
+		<a class="page" title="Page {{ paginatePage }}" href="{{site.url}}{{ menuUrl }}">
+			<svg viewBox="0 0 30 30" height="30px" width="30px">
+				<defs>
+					<rect id="line" width="18" height="3" rx="1.5" fill="black" />
+					<mask id="ko">
+						<rect width="100%" height="100%" fill="white" />
+						<use href="#line" x="6" y="8" />
+						<use href="#line" x="6" y="14" />
+						<use href="#line" x="6" y="20" />
+					</mask>
+				</defs>
+				<circle cx="15" cy="15" r="15" mask="url(#ko)" fill="currentColor" />
+			</svg>
+		</a>
+		<a class="prev post" title="Prev Post" {% if page.previous.url %}href="{{ site.url }}{{ page.previous.url }}"{% else %}disabled{% endif %}>
+			<span class="name">Hess</span>
+			<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+				<defs>
+					<path id="arrow" d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+				</defs>
+				<use href="#arrow" />
+			</svg>
+		</a>
+	</nav>
+</header>
+<main>
+	<article>
+
+		{%
+			include article-header.html
+			title=page.title
+			thumb=page.thumb
+			date=page.date
+			author=page.author
+			excerpt=page.excerpt
+		%}
+
+		<section id="content" class="story-body">
+			{{ content | remove_first:page.excerpt }}
+		</section>
+
+	</article>
+</main>

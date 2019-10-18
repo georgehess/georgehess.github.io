@@ -1,0 +1,36 @@
+---
+layout: default
+theme: home
+---
+<main>
+	{% for post in paginator.posts %}
+		<a class="story-link" tabindex="{{ forloop.index }}" href="{{ post.url }}#read-more">
+			<article id="{{ post.slug }}" class="{{ post.theme }}">
+				{%
+					include article-header.html
+					title=post.title
+					thumb=post.thumb
+					date=post.date
+					author=post.author
+					excerpt=post.excerpt
+				%}
+			</article>
+		</a>
+	{% endfor %}
+
+	{% if paginator.total_pages > 1 %}
+		<nav class="pagination">
+			{% if paginator.previous_page %}
+				<a class="prev" href="{{ site.url }}{{ paginator.previous_page_path }}">
+					Pg {{ paginator.previous_page }}
+				</a>
+			{% endif %}
+			{% if paginator.next_page %}
+				<a class="next" href="{{ site.url }}{{ paginator.next_page_path }}">
+					Pg {{ paginator.next_page }}
+				</a>
+			{% endif %}
+		</nav>
+	{% endif %}
+
+</main>
