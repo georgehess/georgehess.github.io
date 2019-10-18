@@ -10,7 +10,13 @@ layout: default
 			<span class="name">George</span>
 		</a>
 
-		{% assign paginatePage = page.index | divided_by: site.paginate | plus: 1 %}
+		{% for post in site.posts %}
+			{% if post.id == page.id %}
+				{% assign paginatePage = forloop.index0 | divided_by: site.paginate | plus: 1 %}
+				{% break %}
+			{% endif %}
+		{% endfor %}
+
 		{% if paginatePage > 1 %}
 			{% assign menuUrl = "/pg" | append: paginatePage | append: "/#list-" | append: page.slug %}
 		{% else %}
@@ -54,9 +60,9 @@ layout: default
 			excerpt=page.excerpt
 		%}
 
+
 		<section id="content" class="story-body">
 			{{ content | remove_first:page.excerpt }}
 		</section>
-
 	</article>
 </main>
