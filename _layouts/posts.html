@@ -3,7 +3,7 @@ layout: default
 ---
 <header class="sticky">
 	<nav class="menu">
-		<a class="next post" title="Next Post" {% if page.next.url %}href="{{ site.url }}{{ page.next.url }}"{% else %}disabled{% endif %}>
+		<a class="next post" title="Next Post" {% if page.next.url %}href="{{ page.next.url }}"{% else %}disabled{% endif %}>
 			<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
 				<use href="#arrow" />
 			</svg>
@@ -23,7 +23,7 @@ layout: default
 			{% assign menuUrl = "/#list-" | append: page.slug %}
 		{% endif %}
 
-		<a class="page" title="Page {{ paginatePage }}" href="{{site.url}}{{ menuUrl }}">
+		<a class="page" title="Page {{ paginatePage }}" href="{{ menuUrl }}">
 			<svg viewBox="0 0 30 30" height="30px" width="30px">
 				<defs>
 					<rect id="line" width="18" height="3" rx="1.5" fill="black" />
@@ -37,7 +37,7 @@ layout: default
 				<circle cx="15" cy="15" r="15" mask="url(#ko)" fill="currentColor" />
 			</svg>
 		</a>
-		<a class="prev post" title="Prev Post" {% if page.previous.url %}href="{{ site.url }}{{ page.previous.url }}"{% else %}disabled{% endif %}>
+		<a class="prev post" title="Prev Post" {% if page.previous.url %}href="{{ page.previous.url }}"{% else %}disabled{% endif %}>
 			<span class="name">Hess</span>
 			<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
 				<defs>

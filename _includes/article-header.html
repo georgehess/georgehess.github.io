@@ -3,13 +3,13 @@
 		<h1 class="story-title">{{ include.title }}</h1>
 		<div class="story-thumb">
 			<hr />
-			<img src="{{ site.url }}/assets/img/{{ include.thumb }}" width="60" height="60" />
+			<img src="/assets/img/{{ include.thumb }}" width="60" height="60" />
 		</div>
 		<div class="story-cite">
 			<p>
 				Published
 				<time datetime="{{ include.date }}" title="{{ include.date | date: '%B %d, %Y' }}">
-					{{ include.date | date: '%B %d, %Y' }}
+					{{ include.date | date: '%B %-d, %Y' }}
 				</time>
 				<br />
 				by {{ include.author }}

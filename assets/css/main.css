@@ -122,6 +122,10 @@ h6 {
 	width: 50px;
 	text-decoration: none;
 }
+.pagination a[disabled] {
+	cursor: default;
+	opacity: 0.5;
+}
 .pagination .prev {
 	left: 20px;
 }
@@ -208,7 +212,14 @@ h6 {
 	box-sizing: border-box;
 	display: block;
 	margin: -30px 10px 0;
-	padding: 20px 30px;
+	padding: 60px 80px;
+}
+.story-body a {
+	color: #a98846;
+	text-decoration: none;
+}
+.story-body a:hover {
+	text-decoration: underline;
 }
 .story-body h2 {
 	margin: 60px 0 20px;
@@ -224,13 +235,35 @@ h6 {
 }
 .story-body ol,
 .story-body ul {
-	margin: 20px 40px;
+	margin: 20px;
 }
 .story-body > *:first-child {
 	margin-top: 0;
 }
 .story-body > *:last-child {
 	margin-bottom: 0;
+}
+.story-body .separator {
+	display: block;
+}
+.story-body .side-note {
+	padding: 25px 100px;
+	margin: 0 -80px;
+	font-size: 14px;
+}
+.story-body .strike {
+	text-decoration: line-through;
+}
+.story-body .strike-above {
+	position: relative;
+}
+.story-body .strike-above:after {
+	content: attr(title);
+	position: absolute;
+	text-decoration: line-through;
+	top: -1ex;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(-5deg);
 }
 /* THEMES */
 .seaside nav {
@@ -241,7 +274,8 @@ h6 {
 .seaside .story-cite {
 	color: #a0c7bb;
 }
-.seaside .story-header {
+.seaside .story-header,
+.seaside .side-note {
 	background-color: #000b0e;
 }
 .seaside .story-thumb hr,
@@ -257,7 +291,8 @@ h6 {
 	color: #d3b4d8;
 }
 
-.healer .story-header {
+.healer .story-header,
+.healer .side-note {
 	background-color: #0d000e;
 }
 .healer .story-thumb hr,
@@ -272,7 +307,8 @@ h6 {
 .rusty .story-cite {
 	color: #e6b5a8;
 }
-.rusty .story-header {
+.rusty .story-header,
+.rusty .side-note {
 	background-color: #150303;
 }
 .rusty .story-thumb hr,
@@ -287,7 +323,8 @@ h6 {
 .honey .story-cite {
 	color: #e6dabb;
 }
-.honey .story-header {
+.honey .story-header,
+.honey .side-note {
 	background-color: #100c00;
 }
 .honey .story-thumb hr,
@@ -302,7 +339,8 @@ h6 {
 .marine .story-cite {
 	color: #a0afc7;
 }
-.marine .story-header {
+.marine .story-header,
+.marine .side-note {
 	background-color: #000710;
 }
 .marine .story-thumb hr,
@@ -315,11 +353,17 @@ h6 {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 860px;
+		padding: 20px 30px;
 	}
-}
-@media screen and (min-width: 540px) {
-	.story-body {
-		padding: 60px 80px;
+	.story-body .separator {
+		display: inline;
+	}
+	.story-body .separator:after {
+		color: #000;
+		content: " :: ";
+	}
+	.story-body .side-note {
+		margin: 0 -30px;
 	}
 }
 /* ANIMATIONS */

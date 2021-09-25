@@ -1,7 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+{% if page.theme == 'home' %}
+{% assign firstPost = site.posts | first %}
+	<link rel="icon" href="/assets/favicon/{{ firstPost.theme }}/favicon.ico" sizes="any">
+	<link rel="apple-touch-icon" href="/assets/favicon/{{ firstPost.theme }}/apple-touch-icon.png">
+{% else %}
+	<link rel="icon" href="/assets/favicon/{{ page.theme }}/favicon.ico" sizes="any">
+	<link rel="apple-touch-icon" href="/assets/favicon/{{ page.theme }}/apple-touch-icon.png">
+{% endif %}
+	<link rel="stylesheet" href="/assets/css/main.css" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 	<meta name="author" content="{{ site.author }}" />
@@ -40,7 +48,7 @@
 	<meta property="og:image" content="{{ site.url }}/assets/img/{{ page.thumb }}" />
 	<meta name="twitter:card" content="summary" />
 {% else %}
-	<meta property="og:image" content="{{ site.url }}/assets/img/avatar.png" />
+	<meta property="og:image" content="{{ site.url }}/assets/img/avatar.jpg" />
 	<meta name="twitter:card" content="summary" />
 {% endif %}
 </head>
@@ -49,13 +57,13 @@
 	{{ content }}
 
 	<footer>
-		<a href="{{ site.url }}">Home</a><br />
+		<a href="/">Home</a><br />
 		{% if paginator.total_pages > 1 %}
 			<em>Page {{ paginator.page }} of {{ paginator.total_pages }}</em>
 		{% endif %}
 		&copy; {{ "now" | date: "%Y" }} {{ site.author }}
 	</footer>
-	<script src="{{ site.url }}/assets/js/smoothscroll.min.js"></script>
+	<script src="/assets/js/smoothscroll.min.js"></script>
 	<script>
 		var scrollToElement;
 		if (location.hash === "#read-more") {

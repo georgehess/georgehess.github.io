@@ -21,13 +21,21 @@ theme: home
 	{% if paginator.total_pages > 1 %}
 		<nav class="pagination">
 			{% if paginator.previous_page %}
-				<a class="prev" href="{{ site.url }}{{ paginator.previous_page_path }}">
+				<a class="prev" href="{{ paginator.previous_page_path }}">
 					Pg {{ paginator.previous_page }}
+				</a>
+			{% else %}
+				<a class="prev" disabled>
+					Pg 1
 				</a>
 			{% endif %}
 			{% if paginator.next_page %}
-				<a class="next" href="{{ site.url }}{{ paginator.next_page_path }}">
+				<a class="next" href="{{ paginator.next_page_path }}">
 					Pg {{ paginator.next_page }}
+				</a>
+			{% else %}
+				<a class="next" disabled>
+					Pg {{ paginator.total_pages }}
 				</a>
 			{% endif %}
 		</nav>
